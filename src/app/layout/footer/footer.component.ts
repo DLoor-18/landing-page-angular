@@ -8,4 +8,24 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  menu = [
+    {
+      label: "Developers",
+      sub: ["Documentation", "ConnectKit", "GitHub"]
+    },
+    {
+      label: "Resources",
+      sub: ["Audit Report", "Changelog", "Blog", "FAQs", "Press Kit"]
+    },
+    {
+      label: "Company",
+      sub: ["Contact", "X (Twitter)", "Legal"]
+    }
+  ];
+
+  navIcons = [
+    "assets/svgs/git.svg#github-icon",
+    "assets/svgs/x.svg#x-icon",
+    "assets/svgs/mail.svg#mail-icon"
+  ];
 }

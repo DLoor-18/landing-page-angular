@@ -2,7 +2,7 @@
 @use '../../../assets/styles/abstracts/mixins' as mixins;
 
 .menu {
-    @include mixins.container-flex-gap(4px);
+    @include mixins.container-flex-gap(10px);
     list-style: none;
 
     &__item {
@@ -12,23 +12,25 @@
         background: variables.$second-text-color-light;
         color: rgb(40, 38, 36);
         cursor: pointer;
+
+        &__icon {
+            margin-left: 2px;
+        }
+
     }
 
-    &__item--developers:hover &__sub-menu {
-        opacity: 1;
-
-    }
-
-    &__item--developers:hover &__item--developers {
+    &__item:hover &__item__icon {
         rotate: 180deg;
     }
 
-    &__item--resource:hover &__sub-menu-lineal {
-        opacity: 1;
+    &__item:hover {
+        background: #fbfaf9;
+        border-radius: 6px;
     }
 
-    &__item--resource:hover &__item--resource {
-        rotate: 180deg;
+    &__item:hover &__item__sub {
+        opacity: 1;
+        visibility: visible;
     }
 
     &__item,
@@ -36,106 +38,11 @@
         @include mixins.container-flex-gap(3px);
     }
 
-    &__icon {
-        color: rgb(40, 38, 36);
-    }
-
-    &__link {
-        text-decoration: none;
-        color: rgb(40, 38, 36);
-        padding-right: 20px;
-    }
-
-    &__sub-menu,
-    &__sub-menu-lineal {
+    &__item__sub {
         position: absolute;
-        background: rgb(255, 255, 255);
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 16px;
-        border-radius: 8px;
-        padding: 4px;
-        list-style: none;
         opacity: 0;
-
-        li {
-            padding: 8px 8px 8px 12px;
-        }
-
-        li:hover {
-            border-radius: 6px;
-            background: rgba(247, 247, 247, 0.822);
-        }
-    }
-
-    &__sub-menu {
-        top: 70px;
-
-        &__item {
-            @include mixins.container-flex-gap(16px);
-            text-decoration: none;
-
-            &__icon {
-                box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 0px 1px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 0.6rem;
-                width: 36px;
-                height: 36px;
-            }
-
-            &__info {
-
-                &__badge {
-                    @include mixins.container-flex-gap(6px);
-
-                    span {
-                        border-radius: 5px;
-                        padding: 0px 6px 0px 4px;
-                        user-select: none;
-                        background: rgb(248 246 244);
-                        font-size: 12px;
-                        color: rgb(132, 130, 129);
-                    }
-                }
-
-                h5 {
-                    font-weight: 600;
-                    font-size: 15px;
-                    line-height: 22px;
-                    letter-spacing: -0.13px;
-                    color: variables.$primary-text-color-dark;
-                }
-
-                p {
-                    width: 240px;
-                    font-weight: 500;
-                    font-size: 15px;
-                    line-height: 20px;
-                    letter-spacing: -0.09px;
-                    color: rgb(132, 130, 129);
-                }
-
-            }
-        }
-    }
-
-    &__sub-menu-lineal {
-        top: 70px;
-        width: 164px;
-
-        &__item {
-
-            a {
-                display: block;
-                position: relative;
-                text-decoration: none;
-                font-size: 15px;
-                font-weight: 600;
-                padding: 9px 12px;
-                border-radius: 6px;
-                color: variables.$primary-text-color-light;
-            }
-        }
+        visibility: hidden;
+        transition: opacity 0.1s, visibility 0.1s;
     }
 
 }

@@ -3,115 +3,108 @@
 
 footer {
     @include mixins.container-size();
-    padding: 4.25rem 0px 6rem;
-    
+    padding: 4.25rem 0 6rem;
 }
 
 .footer {
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    margin: 0px auto;
+    margin: 0 auto;
     color: rgba(112, 112, 112, 0.4);
+}
 
-    &__left {
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        gap: 3.75rem;
+.footer__left {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.75rem;
+}
 
-        &__icon {
-            margin-right: 70px;
-        }
+.footer__left__icon {
+    margin-right: 70px;
+}
 
-        &__menu {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 80px;
-            list-style: none;
-            margin: 4px 0px 0px auto;
+.footer__left__menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    list-style: none;
+    margin: 4px 0 0 auto;
+}
 
-            &__item {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
+.footer__left__menu__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 
-                span {
-                    font-weight: 600;
-                    font-size: 14px;
-                    line-height: 18px;
-                    letter-spacing: -0.13px;
-                    color: variables.$primary-text-color-dark;
-                }
+    span {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.13px;
+        color: variables.$primary-text-color-dark;
+    }
+}
 
-                &__sub {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 6px;
-                    list-style: none;
-                    padding: 0px;
-                    margin: 0px;
+.footer__left__menu__item__sub {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-                    &__item {
-                        display: block;
+.footer__left__menu__item__sub__item {
+    display: block;
 
-                        :hover span{
-                            color: variables.$primary-text-color-dark;
-                        }
-
-                        span {
-                            display: inline-block;
-                            color: rgba(34, 34, 34, 0.4);
-                            font-weight: 400;
-                            text-decoration: none;
-                            color: variables.$third-text-color-light;
-                        }
-                    }
-                }
-            }
-        }
-
+    span {
+        display: inline-block;
+        font-weight: 400;
+        text-decoration: none;
+        color: variables.$third-text-color-light;
     }
 
-    &__rigth {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 14px;
-        padding-top: 2px;
+    &:hover span {
+        color: variables.$primary-text-color-dark;
+    }
+}
 
-        p {
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 19px;
-            letter-spacing: -0.01px;
-        }
+.footer__rigth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 14px;
+    padding-top: 2px;
 
-        &__list {
-            display: flex;
-            -webkit-box-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            justify-content: center;
-            gap: 6px;
-            list-style: none;
-            color: variables.$third-text-color-light;
+    p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 19px;
+        letter-spacing: -0.01px;
+    }
+}
 
-            &__item {
-                display: block;
+.footer__rigth__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    list-style: none;
+    color: variables.$third-text-color-light;
+}
 
-                :hover svg{
-                    color: variables.$primary-text-color-dark;
-                }
+.footer__rigth__list__item {
+    display: block;
 
-                svg{
-                    color: rgb(228, 228, 228);
-                    display: block;
-                    padding: 2px;
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
+    svg {
+        color: rgb(228, 228, 228);
+        display: block;
+        padding: 2px;
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover svg {
+        color: variables.$primary-text-color-dark;
     }
 }
